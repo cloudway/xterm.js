@@ -19,7 +19,7 @@ console.log('Building xterm.js into ' + buildDir);
 console.log('  - Building ' + buildDir + '/xterm.js...');
 
 var jsBuildCmd = 'browserify src/xterm.js -s Terminal -t [ babelify --presets [ es2015 ] ] --debug | ';
-jsBuildCmd += 'derequire | exorcist ' + buildDir + '/xterm.js.map > ' + buildDir + '/xterm.js';
+jsBuildCmd += 'derequire | exorcist ' + buildDir + '/xterm.js.map | uglifyjs > ' + buildDir + '/xterm.js';
 
 var jsBuildProcess = child_process.execSync(jsBuildCmd);
 
