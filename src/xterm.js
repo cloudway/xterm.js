@@ -595,7 +595,8 @@ Terminal.prototype.open = function(parent) {
   this.helperContainer.classList.add('xterm-helpers');
   // TODO: This should probably be inserted once it's filled to prevent an additional layout
   this.element.appendChild(this.helperContainer);
-  this.textarea = document.createElement('textarea');
+  this.textarea = document.createElement('input');
+  this.textarea.type = 'password';
   this.textarea.classList.add('xterm-helper-textarea');
   this.textarea.setAttribute('autocorrect', 'off');
   this.textarea.setAttribute('autocapitalize', 'off');
